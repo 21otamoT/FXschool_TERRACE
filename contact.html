@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>FX TERRACE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans+JP:wght@100;400&family=Noto+Serif+JP&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <!-- reset.css modern-css-reset -->
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header header-sub">
+    <div class="header-logo">
+      <img src="images/header-logo/Gold Minimalist Abstract Sun Logo.png" alt="ロゴ">
+    </div>
+    <p class="header-pankuzu"><a href="index.html">トップページ</a>＞お問い合わせ</p>
+    <!-- <nav>
+      <ul class="header-menu">
+        <li>登録番号：○○財務局長（金商）第○号<br>
+          加入協会：一般社団法人 ○○協会</li>
+      </ul>
+    </nav> -->
+  </header>
+  <main>
+    <!-- お問い合わせフォーム　メール -->
+      <form class="form" action="https://api.staticforms.xyz/submit" method="post">
+        <input type="text" name="honeypot" style="display:none">
+        <!-- STATIC FORMSのアクセスキー -->
+        <input type="hidden" name="accessKey" value="b63504bf-5825-40e4-9c1a-8199901e795f">
+        <!--メールのタイトル-->
+        <input type="hidden" name="subject" value="お問い合わせフォーム" />
+        <!--送信先のメールアドレスをvalueに設定する-->
+        <input type="hidden" name="replyTo" value="assets.tres.llc@gmail.com">
+        <!--redirectToのURLは公開後のURLへリンクする-->
+        <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
+      <h1>お問い合わせフォーム</h1>
+      <span class="fontColor span">下記のフォームに必要事項をご入力の上、ご送信ください。</span>
+      <table class="form-table">
+        <tr>
+          <th class="fontColor table-th">お名前(フリガナ)</th>
+          <td class="table-td"><input type="text" name="name" placeholder="山田太郎（ヤマダタロウ）" required="必須"></td>
+        </tr>
+        <tr>
+          <th class="fontColor table-th">メールアドレス</th>
+          <td class="table-td"><input type="email" name="email" placeholder="メールアドレス" required="必須"></td>
+        </tr>
+        <tr>
+          <th class="fontColor table-th">お電話番号</th>
+          <td class="table-td"><input type="tel" name="phone" placeholder="お電話番号"></td>
+        </tr>
+        <tr>
+          <th class="fontColor table-th">お問い合わせ内容</th>
+          <td class="table-td"><textarea rows="10" name="message" placeholder="お問い合わせ内容" required="必須"></textarea></td>
+        </tr>
+      </table>
+          <input type="submit" value="上記の内容で送信する" class="submit" id="submit">
+    </form>
+    <!-- お問い合わせフォーム　電話 -->
+    <!-- <form class="form form-phone">
+      <h1>お電話でのお問い合わせはこちら</h1>
+      <h1 class="phone"><a href="tel:">0000-00-0000</a></h1>
+    </form> -->
+  </main>
+  <footer class="footer">
+    <ul class="footer-menu">
+      <li><a href="company.html">会社概要 ＞</a></li>
+      <li><a href="policy.html">個人情報保護基本方針 ＞</a></li>
+      <li><a href="transactions.html">特定商取引法に基づく表記 ＞</a></li>
+      <li><a href="disclaimer.html">免責事項 ＞</a></li>
+      <li><a href="index.html#FAQ">よくあるご質問 ＞</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; FX TERRACEスクール All Rights Reserve</p>
+  </footer>
+
+  <script type="text/javascript" src="js/sub.js"></script>
+</body>
+</html>

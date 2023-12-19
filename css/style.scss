@@ -1,0 +1,746 @@
+@charset "UTF-8";
+@use "_variable";
+@use "_contact-button";
+@use "_triangle";
+@use "_mixin" as *;
+@use "_Layout" as *;
+@use "_pageContact";
+@use "_pageCompany";
+
+
+
+// ====================
+// ヘッダー
+// ====================
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 80px;
+  background-color: var(--deep-blue);
+  @include responsive(ml) {
+    flex-direction: column;
+    height: 130px;
+  }
+  @include responsive(sl) {
+    height: 110px;
+  }
+
+  &-title {
+    font-size: 2vw;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex: 0 0 30%;
+    padding: 8px 0;
+    @include responsive(ml) {
+      font-size: 24px;
+    }
+
+    &-span {
+      font-size: 12px;
+    }
+  }
+
+  &-nav {
+    width: 100%;
+    height: 100%;
+    background-color: #051B3B;
+  }
+
+  &-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8px 0;
+    height: 100%;
+    @include responsive(ml) {
+      width: 100%;
+    }
+
+    &-list {
+      padding: 0 7vw;
+    }
+
+    &-center {
+      border-left: 0.05vw solid #fff;
+      border-right: 0.05vw solid #fff;
+    }
+
+    li {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      a {
+        color: #fff;
+        font-size: 1.6vw;
+        @include responsive(sl) {
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+}
+// =====================
+// 下層ページ　ヘッダー
+// =====================
+.header {
+
+  &-sub {
+    height: auto;
+    justify-content: flex-start;
+    background-color: #fff;
+  }
+
+  &-logo {
+    width: 30%;
+  }
+
+  &-pankuzu {
+    a {
+      color: blue;
+    }
+  }
+}
+
+// ====================
+// メイン
+// ====================
+.main-visual {
+  background-color: var(--deep-blue);
+  position: relative;
+  padding: 0 0 2vw;
+  @include responsive(sl) {
+    height: 63vh;
+  }
+
+  &-contener {
+    display: flex;
+    justify-content: space-between;
+    height: 90%;
+    @include responsive(sl) {
+      height: 60%;
+    }
+  }
+  
+    &-text {
+      flex: 0 0 50%;
+      height: 100%;
+      color: #fff;
+      position: relative;
+      inset: 0 auto auto 5%;
+      display: grid;
+      margin: 1vw 0 0;
+
+      &1 {
+        font-size: 5vw;
+        align-self: center;
+        @include responsive(ml) {
+          font-size: 4.5vw;
+        }
+        @include responsive(sl) {
+          font-size: 7vw;
+        }
+      }
+
+      &2 {
+        font-size: 3.6vw;
+        margin: 40px 0 0;
+        @include responsive(ml) {
+          font-size: 4.6vw;
+        }
+
+        & + p {
+          margin: 20px 0 0;
+        }
+      }
+
+      &3 {
+        font-size: 2vw;
+        @include responsive(ml) {
+          font-size: 4vw;
+          & + & {
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+    }
+
+    &-img {
+      flex: 0 0 50%;
+      height: auto;
+      clip-path: polygon(20% 0%,100% 0,100% 100%,0% 100%);
+      @include responsive(ml){
+        clip-path: polygon(0 0%,100% 0,100% 100%,30% 100%);
+      }
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .contact-button {
+      margin: 13vw auto;
+      @include responsive(ml) {
+        box-shadow: 0 5px 0 #DE5D00;
+      }
+    }
+}
+// ====================
+// はじめのご挨拶
+// ====================
+.section1 {
+  text-align: center;
+  &-title {
+    background-color: var(--triangle-color);
+    font-size: 5.5vw;
+    @include responsive(ml) {
+      font-size: calc(3vw + 12px);
+    }
+  }
+  &-text {
+    font-size: 3vw;
+    padding: 5vw 0 0;
+  }
+}
+
+// ==================
+// スクール概要
+// ==================
+.section2 {
+  position: relative;
+
+  &-title {
+    font-size: 5.8vw;
+    text-align: center;
+    margin: 5vw 0 0;
+  }
+
+  .triangle {
+    width: 100%;
+  }
+
+  div {
+    p {
+      margin: 0 0 0 11vw;
+      padding: 4vw 0;
+      line-height: 2em;
+      @include responsive(ml) {
+        margin: 0 0 0 3vw;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 4vw;
+    text-align: center;
+  }
+
+  &-text {
+    position: relative;
+    inset: -10vw auto auto 0;
+    z-index: -1;
+    margin: 0 auto;
+    @include responsive(ml) {
+      inset: -20vw auto auto 0;
+    }
+
+    &-center {
+        font-size: 2.4vw;
+      @include responsive(ml) {
+        font-size: 2.7vw;
+        margin: 0 0 0 3vw;
+      }
+    }
+
+    &-rhyme {
+      background-color: var(--rhyme-chart);
+      color: #fff;
+      font-size: 6.5vw;
+      padding: 1vw 0 0;
+      margin: 3.5vw auto 0;
+      text-align: center;
+    }
+
+    &-gray {
+      background-color: #D9D9D9;
+      p {
+        font-size: 2.4vw;
+        @include responsive(ml) {
+          font-size: 3vw;
+        }
+      }
+      &[data-text] {
+        padding: 7vw 0 0;
+        @include responsive(ml) {
+          margin: 12vw auto 0;
+        }
+      }
+    }
+
+    &-neybe {
+      background-color: var(--deep-blue);
+      color: #fff;
+      text-align: center;
+      font-size: 3vw;
+      padding: 1.5vw 0 1.5vw;
+      h2 {
+        position: relative;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 5vw;
+          aspect-ratio: 1;
+          background-color: var(--deep-blue);
+          position: absolute;
+          inset: 5vw auto auto 47%;
+          z-index: -1;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &-end {
+      position: relative;
+      inset: -1vw auto auto 0;
+      @include responsive(ml) {
+        inset: -15vw auto auto 0;
+      }
+      &::before,&::after {
+        content: '';
+        background-size: contain;
+        background-position: center;
+        display: inline-block;
+        width: 4vw;
+        aspect-ratio: 1; 
+        position: absolute;
+      }
+      &::before {
+        background-image: url(../images/text_left.svg);
+        inset: 3vw auto auto 14vw;
+      }
+      &::after {
+        background-image: url(../images/text_right.svg);
+        inset: 3vw 15vw auto auto;
+      }
+    }
+  }// /-text
+  .triangle {
+    --triangle-color: var(--rhyme-chart);
+  }
+
+}// .section2
+
+// ==================
+// ３つの理由
+// ==================
+.blue {
+  background-color: var(--triangle-color);
+  position: relative;
+  z-index: -2;
+  padding: 7vw 0 0 0;
+}
+
+.section3 {
+  .wrapper {
+    display: grid;
+  }
+
+  &-title {
+    background-color: var(--triangle-color);
+    z-index: -1;
+    position: relative;
+    padding: 12vw 0 0;
+    & > span {
+      background-color: var(--rhyme-chart);
+      color: #fff;
+      padding: 2vw 1vw 1vw;
+
+    span {
+      font-size: 1.5em;
+      padding: 0;
+    } 
+    }
+  }
+
+  &-subtitle {
+    text-align: center;
+    margin: 1vw 0 0 0;
+    font-size: 5vw;
+
+    &[data-text="理由１"] {
+      @include reason(parent);
+      &::before {
+        @include reason(child);
+      }
+    }
+    &[data-text="理由２"] {
+      @include reason(parent);
+      margin: 0 0 0 0;
+      &::before {
+        @include reason(child);
+      }
+    }
+    &[data-text="理由３"] {
+      @include reason(parent);
+      &::before {
+        @include reason(child);
+      }
+    }
+  }
+
+  p {
+    margin: 4vw auto 0;
+    line-height: 2em;
+    font-size: 2.8vw;
+    grid-area: b;
+    @include responsive(sl) {
+      font-size: 2.8vw;
+    }
+  }
+
+  .carousel {
+    margin: 3vw auto 0;
+    & > div {
+      width: 60vw;
+      height: 50vw;
+      margin: 0 auto;
+      box-shadow: 1px 3px 5px #333;
+
+      img {
+        object-fit: contain;
+        height: 60%;
+      }
+
+      p {
+        padding: 0 0 5vw 0;
+        font-size: 2vw;
+        text-align: center;
+      }
+    }
+
+    .slick-prev:before,.slick-next:before{
+      display: block;
+      color: #fff;
+      background-color: #333;
+      border: 1px solid var(--color);
+      width: 30px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      padding: 1px;
+      font-weight: bold;
+    }
+    .slick-prev:before {
+      content:'<';
+    }
+    .slick-next:before {
+      content:'>';
+    }
+  }
+}// .section3
+// =================
+// サービス内容
+// =================
+.section4{
+  .wrapper {
+    margin: 1vw auto 0;
+  }
+
+  &-title {
+    background-color: var(--triangle-color);
+  }
+
+  .acordion {
+    background-color: var(--deep-blue);
+    color: #fff;
+    font-size: 1vw;
+    padding: 1vw 2vw;
+    position: relative;
+    width: 100%;
+    @include responsive(ml) {
+      font-size: 5vw;
+    }
+
+    &-item {
+      box-shadow: 2px 2px 6px #333;
+      flex: 1;
+      padding: 1vw 1vw 0;
+    }
+
+    &-flex {
+      display: flex;
+      gap: 2vw;
+      @include responsive(ml) {
+        flex-direction: column;
+      }
+      &-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @include responsive(ml) {
+          width: 100%;
+        }
+
+        &-img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 3vw;
+      aspect-ratio: 1;
+      background: var(--arrow) no-repeat center;
+      background-size: contain;
+      position: absolute;
+      inset: 6% 0 auto auto;
+      border-left: 2px dashed #fff;
+      @include responsive(ml) {
+        width: 8vw;
+      }
+    }
+    &.close {
+      --arrow: url(../images/icon/expand_less_FILL0_wght400_GRAD0_opsz24.svg);
+    }
+
+    &-text {
+      max-width: 70vw;
+      margin: 0 auto;
+      font-size: 0.7vw;
+      line-height: 2em;
+      @include responsive(ml) {
+        font-size: 2.1vw;
+      }
+      @include responsive(sl) {
+        font-size: 2vw;
+      }
+    }
+  }
+}// .section4
+// ==================
+// 1年間のカリキュラム
+// ==================
+.section5{
+  background-color: var(--deep-blue);
+  padding: 3vw 0 1vw;
+  @include responsive(ml) {
+    display: none;
+  }
+
+  &-sp {
+    display: none;
+    @include responsive(ml) {
+      display: block;
+    }
+  }
+
+  &-title {
+    padding: 1vw 0 0;
+    font-size: 5vw;
+    @include responsive(sl) {
+      padding: 3vw 0 0;
+      font-size: 3vw;
+    }
+  }
+
+  .curriculum {
+    background-color: #fff;
+    margin: 10vw auto 10vw;
+    width: 80%;
+  }
+
+  .table {
+    margin: 1vw auto 0;
+    padding: 0 4vw 0 0;
+    @include responsive(sl) {
+      margin: 3vw auto 0;
+    }
+    &-title {
+      font-size: 2vw;
+      @include responsive(ml) {
+        font-size: 3vw;
+      }
+      @include responsive(sl) {
+        font-size: 3vw;
+        width: 30%;
+        font-family: 'slick';
+      }
+    }
+
+    &-right {
+      width: 70%;
+      vertical-align: bottom;
+    }
+
+    th {
+      vertical-align: middle;
+      &:not(:last-child) {
+        clip-path: polygon(0% 0%, 93% 0, 100% 50%, 92% 100%, 0% 100%);
+      }
+    }
+
+    td {
+      width: 20%;
+      padding: 10px;
+      vertical-align: baseline;
+      font-size: 1vw;
+      @include responsive(sl) {
+        font-size: 2.1vw;
+      }
+    }
+
+    .blue {
+      &1 {
+        background-color: var(--triangle-color);
+        &-sp {
+          @extend .blue1;
+          @include tableClip();
+          font-size: 2vw;
+        }
+      }
+      &2 {
+        background-color: #A8B4E3;
+        &-sp {
+          @extend .blue2;
+          @include tableClip();
+          font-size: 2vw;
+        }
+      }
+      &3 {
+        background-color: #5163AB;
+        color: #fff;
+        &-sp {
+          @extend .blue3;
+          @include tableClip();
+          font-size: 2vw;
+        }
+      }
+      &4 {
+        background-color: var(--deep-blue);
+        color: #fff;
+        &-sp {
+          @extend .blue4;
+          @include tableClip();
+          font-size: 2vw;
+        }
+      }
+    }
+  }
+}
+// ==================
+// よくある質問
+// ==================
+.section6 {
+  &-title {
+    background-color: var(--triangle-color);
+  }
+
+  h2 {
+    text-align: center;
+    margin: 5vw 0 0;
+    font-size: 3.6vw;
+    font-weight: bold;
+    font-family: 'slick';
+    @include responsive(sl) {
+      font-size: 3.3vw;
+    }
+  }
+
+  .wrapper {
+    margin: 8vw auto 0;
+
+    p {
+      font-size: 2vw;
+      @include responsive(sl) {
+        font-size: 2.9vw;
+      }
+    } 
+  }
+  [data-text="Q"],[data-text="A"] {
+    position: relative;
+    font-size: 1em;
+  }
+
+  [data-text="Q"] {
+    &::before {
+      @include FAQ();
+      inset: -17% auto auto -11%;
+      font-size: 1.3em;
+    }
+  }
+
+  [data-text="A"] {
+    &::before {
+      @include FAQ();
+      inset: -20% auto auto -13%;
+      font-size: 1.4em;
+    }
+  }
+}
+// =================
+// 終わりのご挨拶
+// =================
+.section7 {
+  text-align: center;
+  margin: 2vw auto 0;
+
+  &-title {
+    @extend .section1-title;
+  }
+
+  &-text {
+    font-size: 3vw;
+    padding: 2vw 0 0;
+  }
+
+  .contact-button {
+    margin: 5vw auto;
+  }
+}
+// ===============
+// フッター
+// ===============
+.footer {
+  background-color: var(--deep-blue);
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: 1fr .5fr;
+  margin: 12px 0 0;
+
+  &-main {
+    margin: 0 0 0;
+  }
+
+  &-menu {
+    grid-area: 1/3/3/4;
+    justify-self: center;
+    li {
+      a {
+      color: #fff;
+      font-size: 1.1vw;
+      @include responsive(ml) {
+        font-size: 10px;
+        white-space: nowrap;
+      }
+      }
+    }
+  }
+  
+  .copy {
+    color: #fff;
+    grid-area: 3/2/3/5;
+    text-align: center;
+    @include responsive(sl) {
+      font-size: 2.7vw;
+    }
+  }
+
+  &-sub {
+    margin: 1vw 0 0;
+  }
+}

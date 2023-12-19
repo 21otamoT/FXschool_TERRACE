@@ -1,0 +1,90 @@
+// レスポンシブ
+@mixin responsive($size) {
+  $width: 0;
+
+  @if ($size==ml) {
+    $width: 768px;
+  }
+  @else if ($size==sl) {
+    $width: 430px;
+  }
+
+  @media screen and (max-width:$width){
+    @content;
+  }
+}
+
+// ３つの理由
+@mixin reason($famiry) {
+  @if ($famiry==parent) {
+    position: relative;
+    margin: 1vw 0 0 0;
+  }
+  @else if ($famiry==child) {
+    content: attr(data-text);
+    display: flex;
+    color: #fff;
+    text-shadow: 2px 3px 0 var(--rhyme-chart);
+    position: absolute;
+    inset: 3% auto auto 42.6%;
+    z-index: -1;
+    @include responsive(ml) {
+      inset: 4% auto auto 42.8%;
+    }
+    @include responsive((sl)) {
+      inset: 6% auto auto 42.6%;
+    }
+  }
+}
+
+// カリキュラムのテーブルの切り取り
+@mixin tableClip() {
+  padding: 0 0 1vw;
+  clip-path: polygon(0% 0%, 100% 0, 100% 68%, 51% 100%, 0 67%);
+  font-size: 4vw;
+}
+
+// よくある質問
+@mixin FAQ() {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--rhyme-chart);
+  font-weight: 900;
+  z-index: -1;
+}
+
+// お問い合わせボタン
+@mixin contactButton() {
+    background-image: linear-gradient(180deg, #FFC759 18.63%, #FF7E06 100%);
+    position: relative;
+    width: 80vw;
+    height: auto;
+    padding: 6.94vw 1.66vw 0.69vw;
+    border-radius: 100px;
+    box-shadow: 0 8px 5px #DE5D00;
+    transition: all .4s;
+  
+    &:hover {
+      transform: translateY(5px);
+      box-shadow: 0 2px 5px #DE5D00;
+    }
+  
+    &-ribbon {
+      background-color: #fff;
+      border-radius: 100px;
+      display: inline-block;
+      color: #000;
+      padding:0 2vw;
+      margin: 1vw 0 0;
+      position: absolute;
+      inset: 2vw auto auto 3vw;
+      font-size: 2.94vw;
+    }
+  
+    &-text {
+      font-size: 3.94vw;
+      font-weight: bold;
+      text-align: end;
+      padding: 1vw;
+    }
+  }

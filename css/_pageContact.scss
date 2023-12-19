@@ -1,0 +1,115 @@
+@use "_variable" as *;
+@use "_mixin" as *;
+
+// 下層ページ　お問い合わせ
+.form {
+  width: 61.8%;
+  border: 5px solid $color;
+  margin: 0 auto;
+  background-color: rgba($color: $colorBeige, $alpha: .5);
+  text-align: center;
+  @include responsive(ml) {
+    width: 98%;
+  }
+
+  & h1 {
+    margin-top: 56px;
+    @include responsive(sl) {
+      font-size: 6vw;
+    }
+  } 
+
+  .fontColor {
+    color: blue;
+  }
+
+  & .span {
+    margin-top: 24px;
+    display: inline-block;
+    @include responsive(sl) {
+      font-size: 3vw;
+    }
+  }
+
+  .form-table {
+    margin: 24px auto 0;
+    width: 70%;
+
+    & tr {
+      margin: 40px auto 0;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+
+  .table-th {
+    background-color: #fff;
+    padding: 1rem 0;
+    flex-basis: 30%;
+    margin-right: 4em;
+    font-size: 1.5vw;
+    @include responsive(ml) {
+      flex-basis: 100%;
+      margin-right: 0;
+      font-size: 2vw;
+    }
+    @include responsive(sl) {
+      font-size: 4vw;
+    }
+  }
+
+  .table-td {
+    flex-basis: 50%;
+    display: inline-block;
+    align-self: center;
+    @include responsive(ml) {
+      flex-basis: 100%;
+    }
+
+    & input {
+      width: 100%;
+      padding: 1rem .5em;
+      border: none;
+      text-align: center;
+    }
+
+    & textarea {
+      border: none;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .submit {
+    padding: 13px 30px;
+    color: #fff;
+    background-color: $color;
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  .phone {
+    margin-top: 0;
+  }
+
+  .contact-button {
+    width: 80%;
+    margin: 9vw auto 0;
+    &-text {
+      font-size: 3vw;
+    }
+  }
+}
+
+.form-phone {
+  margin-top: 80px;
+  padding-bottom: 4vw;
+}

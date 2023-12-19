@@ -1,0 +1,79 @@
+@use "_mixin" as *;
+@use "_variable" as *;
+
+body {
+  font-family: 'Noto Sans JP', serif,sans-serif;
+}
+
+.wrapper {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  transition: all .8s;
+  &:hover {
+    opacity: .7;
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 3vw;
+  font-weight: bold;
+  padding-top: 10.94vw;
+  text-align: center;
+  font-family: 'slick';
+  @include responsive(sl) {
+    font-size: 5vw;
+  }
+}
+
+.line {
+  border-bottom: 5px solid var(--rhyme-chart);
+  font-weight: bold;
+  &-p {
+    border-bottom: 3px solid var(--rhyme-chart);
+    @include responsive(sl) {
+      border-bottom: 1px solid var(--rhyme-chart);
+    }
+  }
+}
+
+.br {
+  display: none;
+  @include responsive(sl) {
+    display: block;
+  }
+  &-sp {
+    display: none;
+    @include responsive(sl) {
+      display: block;
+    }
+  }
+}
+
+#page-top {
+  background-color: black;
+  text-align: center;
+  & a {
+    color: #fff;
+    font-size: 2em;
+  }
+}
+
+// 下層ページのレイアウト
+.frame {
+  .wrapper {
+    background-color: $colorBeige;
+    border: 1vw solid $blue;
+  }
+  &-text {
+    padding: 5vw;
+  }
+}

@@ -1,0 +1,20 @@
+.triangle {
+  width: 100vw;
+  height: 6.94vw;
+  background-color: var(--triangle-color);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  position: relative;
+  inset: -1px auto auto 0;
+  &-white {
+    @extend .triangle;
+    --triangle-color: #fff;
+    position: relative;
+    inset: 6.9vw auto auto 0;
+
+    &-school {
+      position: absolute;
+      inset: auto 50% -6.9vw auto;
+      transform: translate(50%, 0px);
+    }
+  }
+}
